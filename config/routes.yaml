@@ -4,3 +4,7 @@
 test:
   path: /getTestData
   controller: App\Controller\TestController::getTestData
+
+getUsers:
+  path: /getAllUsers
+  controller: App\Controller\TestController::getUsers
