@@ -50,8 +50,9 @@ class TestController
     }
 
     // get all categories stub
-    public function getCategories() : Response
+    public function getCategories(Request $request) : Response
     {
+        $allowHeader = $request->headers->get('Origin');
         $obj = [
             "0" => "Авто",
             "1" => "Хозяйственые товары",
@@ -62,7 +63,7 @@ class TestController
         ];
         $resp = new Response(json_encode ($obj,JSON_UNESCAPED_UNICODE));
         $resp->headers->set('Content-Type', 'application/json');
-        $resp->headers->set('Access-Control-Allow-Origin', 'http://95.165.14.0:3000');
+        $resp->headers->set('Access-Control-Allow-Origin', $allowHeader);
         return $resp;
     }
 }
