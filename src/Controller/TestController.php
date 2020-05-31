@@ -62,6 +62,7 @@ class TestController
         ];
         $resp = new Response(json_encode ($obj,JSON_UNESCAPED_UNICODE));
         $resp->headers->set('Content-Type', 'application/json');
+        $resp->headers->set('Access-Control-Allow-Origin', 'http://95.165.14.0:3000');
         return $resp;
     }
 }
