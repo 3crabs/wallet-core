@@ -1,0 +1,20 @@
+name: MASTER_PUSH_DEPLOY
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    name: DEPLOYING
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create new txt
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWD }}
+          script: cd ~/projects/wallet-core && git pull origin master
