@@ -50,15 +50,18 @@ class TestController
     }
 
     // get all categories stub
-    public function getCategories() : JsonResponse
+    public function getCategories() : Response
     {
-        return new JsonResponse([
+        $obj = [
             "0" => "Авто",
             "1" => "Хозяйственые товары",
             "2" => "Продукты",
             "3" => "Здоровье",
             "4" => "Спорт",
             "5" => "Наркотики",
-        ]);
+        ];
+        $resp = new Response(json_encode ($obj,JSON_UNESCAPED_UNICODE));
+        $resp->headers->set('Content-Type', 'application/json');
+        return $resp;
     }
 }
