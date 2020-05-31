@@ -4,7 +4,19 @@
 test:
   path: /getTestData
   controller: App\Controller\TestController::getTestData
+  methods: [GET]
 
 getUsers:
   path: /getAllUsers
   controller: App\Controller\TestController::getUsers
+  methods: [GET]
+
+addUser:
+  path: /user
+  controller: App\Controller\TestController::addUser
+  methods: [POST]
+
+getCategories:
+  path: /categories
+  controller: App\Controller\TestController::getCategories
+  methods: [GET]
