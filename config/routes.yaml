@@ -14,7 +14,6 @@ getUsers:
 addUser:
   path: /user
   controller: App\Controller\TestController::addUser
-  methods: [POST]
 
 getCategories:
   path: /categories
