@@ -17,4 +17,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWD }}
-          script: cd ~/projects/wallet-core && git pull origin master && composer update
+          script: cd ~/projects/wallet-core && git pull origin master
