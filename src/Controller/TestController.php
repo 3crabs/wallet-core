@@ -35,20 +35,6 @@ class TestController
         return $resp;
     }
 
-    public function addUser(EntityManagerInterface $entityManager, Request $request) : Request
-    {
-//        $name = $request->query->get('name');
-        return $request;
-//        $user = new User();
-//        $user->setName($name);
-//        $entityManager->persist($user);
-//        $entityManager->flush();
-//
-//        return new JsonResponse([
-//            "id" => $user->getId(),
-//        ]);
-    }
-
     // get all categories stub
     public function getCategories(Request $request) : Response
     {

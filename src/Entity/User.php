@@ -24,6 +24,11 @@ class User
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $password;
+
+    /**
      * @var Category[]
      * @ORM\OneToMany(targetEntity="Category", mappedBy="category")
      */
@@ -34,6 +39,18 @@ class User
      * @ORM\OneToMany(targetEntity="Flow", mappedBy="flow")
      */
     private $flows;
+
+
+    /**
+     * User constructor.
+     * @param string $name
+     * @param string $password
+     */
+    public function __construct(string $name, string $password)
+    {
+        $this->name = $name;
+        $this->password = $password;
+    }
 
     /**
      * @return Category[]
@@ -82,5 +99,21 @@ class User
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
     }
 }

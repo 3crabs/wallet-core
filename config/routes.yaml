@@ -11,10 +11,6 @@ getUsers:
   controller: App\Controller\TestController::getUsers
   methods: [GET]
 
-addUser:
-  path: /user
-  controller: App\Controller\TestController::addUser
-
 getCategories:
   path: /categories
   controller: App\Controller\TestController::getCategories
